@@ -6,7 +6,7 @@
 #    By: vini <vini@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 14:55:55 by vini              #+#    #+#              #
-#    Updated: 2024/05/06 14:56:10 by vini             ###   ########.fr        #
+#    Updated: 2024/05/06 20:11:56 by vini             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,13 @@ RM = rm -f
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 # DEBUG = -g3 -fsanitize=address
-SRC = megaphone.cpp
+SRC = main.cpp PhoneBook.cpp Contact.cpp
 
 OBJ_DIR = ./obj/
 OBJ_FILES = $(SRC:.cpp=.o)
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
+
+HEADER = Contact.hpp PhoneBook.hpp
 
 # COLOURS
 DEF_COLOR = \033[0;39m
@@ -39,11 +41,11 @@ all: $(OBJ_DIR) $(NAME)
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
-$(OBJ_DIR)%.o:%.cpp
+$(OBJ_DIR)%.o:%.cpp $(HEADER)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 # executable compiled
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(HEADER)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 	@echo "\n$(GREEN)executable compiled$(DEF_COLOR)-> $@\n"
 
