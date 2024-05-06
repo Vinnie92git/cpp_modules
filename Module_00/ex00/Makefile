@@ -6,7 +6,7 @@
 #    By: vini <vini@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/30 11:07:20 by vini              #+#    #+#              #
-#    Updated: 2024/04/30 12:22:57 by vini             ###   ########.fr        #
+#    Updated: 2024/05/06 14:44:04 by vini             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,12 +25,12 @@ OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 # COLOURS
 DEF_COLOR = \033[0;39m
 CUT = \033[K
-R = \033[31;1m
-G = \033[32;1m
-Y = \033[33;1m
-B = \033[34;1m
-P = \033[35;1m
-GR = \033[30;1m
+RED = \033[31;1m
+GREEN = \033[32;1m
+YELLOW = \033[33;1m
+BLUE = \033[34;1m
+PURPLE = \033[35;1m
+GREY = \033[30;1m
 END = \033[0m
 
 # RULES
@@ -45,18 +45,18 @@ $(OBJ_DIR)%.o:%.cpp
 # executable compiled
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "\n$(G)executable compiled$(DEF_COLOR)-> $@\n"
+	@echo "\n$(GREEN)executable compiled$(DEF_COLOR)-> $@\n"
 
 # all .o files, obj directory and executable removed
 clean:
 	@$(RM) $(OBJ)
 	@rm -rf $(OBJ_DIR)
-	@echo "$(R)All .o files and /obj directory removed$(DEF_COLOR)\n"
+	@echo "$(RED)All .o files and /obj directory removed$(DEF_COLOR)\n"
 
 fclean: clean
 	@$(RM) $(NAME)
 	@rm -rf $(OBJ_DIR)
-	@echo "$(R)Executable removed$(DEF_COLOR)\n"
+	@echo "$(RED)Executable removed$(DEF_COLOR)\n"
 
 re: fclean all
 
