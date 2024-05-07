@@ -6,23 +6,23 @@
 #    By: vini <vini@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/07 19:49:01 by vini              #+#    #+#              #
-#    Updated: 2024/05/07 19:49:30 by vini             ###   ########.fr        #
+#    Updated: 2024/05/07 20:03:10 by vini             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =
+NAME = brainz
 LIB = ar rcs
 RM = rm -f
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 # DEBUG = -g3 -fsanitize=address
-SRC =
+SRC = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
 OBJ_DIR = ./obj/
 OBJ_FILES = $(SRC:.cpp=.o)
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-HEADER =
+HEADER = Zombie.hpp
 
 # COLOURS
 DEF_COLOR = \033[0;39m
