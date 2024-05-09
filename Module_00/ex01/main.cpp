@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: vipalaci <vipalaci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 15:13:14 by vini              #+#    #+#             */
-/*   Updated: 2024/05/07 20:08:08 by vini             ###   ########.fr       */
+/*   Updated: 2024/05/09 13:33:36 by vipalaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ void	instructions(void)
 {
 	std::cout << std::endl;
 	std::cout << "-------------PHONEBOOK COMMANDS--------------" << std::endl;
-    std::cout << "ADD\t: to add a contact." << std::endl;
-    std::cout << "SEARCH\t: to search for a contact." << std::endl;
-    std::cout << "EXIT\t: to exit the phonebook." << std::endl;
-    std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "ADD\t: to add a contact." << std::endl;
+	std::cout << "SEARCH\t: to search for a contact." << std::endl;
+	std::cout << "EXIT\t: to exit the phonebook." << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
 	std::cout << std::endl;
 }
 
 int	main(void)
 {
-	PhoneBook 	phonebook;
+	PhoneBook	phonebook;
 	std::string	input = "";
 	
 	instructions();

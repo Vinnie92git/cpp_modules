@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: vipalaci <vipalaci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 15:15:43 by vini              #+#    #+#             */
-/*   Updated: 2024/05/07 00:09:29 by vini             ###   ########.fr       */
+/*   Updated: 2024/05/09 12:34:46 by vipalaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ void	PhoneBook::display_phonebook(void)
 	std::cout << std::endl;
 	std::cout << "-------------PHONEBOOK CONTACTS--------------" << std::endl;
 	std::cout << "|" << std::setw(10) << std::right << "Index" << std::flush;
-    std::cout << "|" << std::setw(10) << std::right << "First Name" << std::flush;
-    std::cout << "|" << std::setw(10) << std::right << "Last Name" << std::flush;
-    std::cout << "|" << std::setw(10) << std::right << "Nickname" << std::flush;
-    std::cout << "|" << std::endl;
+	std::cout << "|" << std::setw(10) << std::right << "First Name" << std::flush;
+	std::cout << "|" << std::setw(10) << std::right << "Last Name" << std::flush;
+	std::cout << "|" << std::setw(10) << std::right << "Nickname" << std::flush;
+	std::cout << "|" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
 	if (!this->m_empty)
 	{
