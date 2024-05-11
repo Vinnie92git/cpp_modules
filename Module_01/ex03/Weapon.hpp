@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 23:02:56 by vini              #+#    #+#             */
-/*   Updated: 2024/05/11 23:03:50 by vini             ###   ########.fr       */
+/*   Updated: 2024/05/11 23:32:19 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 class Weapon
 {
 private:
-	std::string	m_name;
-	
+	std::string	type;
+
 public:
-	Weapon();
+	Weapon(std::string type);
 	~Weapon();
-	void	announce(void);
-	void	setName(std::string name);
+	const std::string&	getType(void);
+	void				setType(std::string newType);
 };
 
 #endif
