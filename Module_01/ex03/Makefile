@@ -6,7 +6,7 @@
 #    By: vini <vini@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/11 22:59:27 by vini              #+#    #+#              #
-#    Updated: 2024/05/11 22:59:55 by vini             ###   ########.fr        #
+#    Updated: 2024/05/13 14:50:20 by vini             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,13 @@ RM = rm -f
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 # DEBUG = -g3 -fsanitize=address
-SRC = main.cpp
+SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBJ_DIR = ./obj/
 OBJ_FILES = $(SRC:.cpp=.o)
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-HEADER =
+HEADER = Weapon.hpp HumanA.hpp HumanB.hpp
 
 # COLOURS
 DEF_COLOR = \033[0;39m

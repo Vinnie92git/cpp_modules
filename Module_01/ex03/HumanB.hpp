@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 23:02:47 by vini              #+#    #+#             */
-/*   Updated: 2024/05/12 00:03:07 by vini             ###   ########.fr       */
+/*   Updated: 2024/05/13 14:36:32 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,13 @@
 class HumanB
 {
 private:
-	std::string	Weapon;
 	std::string	name;
+	Weapon* 	weapon;
 
 public:
 	HumanB(std::string name);
 	~HumanB();
-	void	getter(void);
-	void	setter(void);
+	void	setWeapon(Weapon& weapon);
 	void	attack(void);
 };
 
