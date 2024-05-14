@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: vipalaci <vipalaci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/05/13 14:55:29 by vini              #+#    #+#              #
-#    Updated: 2024/05/14 12:40:29 by vipalaci         ###   ########.fr        #
+#    Created: 2024/05/14 14:08:30 by vipalaci          #+#    #+#              #
+#    Updated: 2024/05/14 14:09:37 by vipalaci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = sed
+NAME = harl
 LIB = ar rcs
 RM = rm -f
 CC = c++

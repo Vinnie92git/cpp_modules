@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: vipalaci <vipalaci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:00:42 by vini              #+#    #+#             */
-/*   Updated: 2024/05/13 22:53:41 by vini             ###   ########.fr       */
+/*   Updated: 2024/05/14 13:58:11 by vipalaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,26 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 
-	std::string	content;
+	std::string		outfile_name(argv[1]);
+	std::ofstream	outfile;
+	outfile_name.append(".replace");
+	outfile.open(outfile_name.c_str());
+	
+	std::string		content;
+	std::string		searchWord(argv[2]);
+	std::string		replaceWord(argv[3]);
 	std::getline(infile, content, '\0');
+	size_t			pos = content.find(searchWord);
+	while (pos != std::string::npos)
+	{
+		content.erase(pos, searchWord.length());
+		content.insert(pos, replaceWord);
+		pos = content.find(searchWord);
+	}
+	outfile << content;
+
+	infile.close();
+	outfile.close();
+	
 	return (0);
 }
