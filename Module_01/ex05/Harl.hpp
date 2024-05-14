@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vipalaci <vipalaci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:10:47 by vipalaci          #+#    #+#             */
-/*   Updated: 2024/05/14 14:31:25 by vipalaci         ###   ########.fr       */
+/*   Updated: 2024/05/14 21:28:53 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ public:
 	~Harl();
 	void	complain(std::string level);
 };
+
+typedef void	(Harl::*harl_func_t)(void);
 
 #endif
 

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vipalaci <vipalaci@student.42.fr>          +#+  +:+       +#+         #
+#    By: vini <vini@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 14:08:30 by vipalaci          #+#    #+#              #
-#    Updated: 2024/05/14 14:09:37 by vipalaci         ###   ########.fr        #
+#    Updated: 2024/05/14 22:11:31 by vini             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,13 @@ RM = rm -f
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 # DEBUG = -g3 -fsanitize=address
-SRC = main.cpp
+SRC = main.cpp Harl.cpp
 
 OBJ_DIR = ./obj/
 OBJ_FILES = $(SRC:.cpp=.o)
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-HEADER =
+HEADER = Harl.hpp
 
 # COLOURS
 DEF_COLOR = \033[0;39m
