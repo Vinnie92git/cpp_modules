@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 13:58:14 by vipalaci          #+#    #+#             */
-/*   Updated: 2024/05/16 21:33:47 by vini             ###   ########.fr       */
+/*   Updated: 2024/05/17 00:38:53 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Fixed& Fixed::operator=(const Fixed& obj)
 Fixed::Fixed(const int nb)
 {
 	std::cout << "Int constructor called." << std::endl;
-	this->value = nb << (this->bits);
+	this->value = (nb << (this->bits));
 }
 
 Fixed::Fixed(const float nb)
