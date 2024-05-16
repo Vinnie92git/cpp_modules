@@ -3,26 +3,26 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vini <vini@student.42.fr>                  +#+  +:+       +#+         #
+#    By: vipalaci <vipalaci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 22:56:28 by vini              #+#    #+#              #
-#    Updated: 2024/05/14 22:56:43 by vini             ###   ########.fr        #
+#    Updated: 2024/05/16 13:40:26 by vipalaci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 
+NAME = fixed
 LIB = ar rcs
 RM = rm -f
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 # DEBUG = -g3 -fsanitize=address
-SRC = main.cpp
+SRC = main.cpp Fixed.cpp
 
 OBJ_DIR = ./obj/
 OBJ_FILES = $(SRC:.cpp=.o)
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-HEADER =
+HEADER = Fixed.hpp
 
 # COLOURS
 DEF_COLOR = \033[0;39m
