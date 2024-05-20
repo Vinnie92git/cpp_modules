@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vipalaci <vipalaci@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 13:46:30 by vipalaci          #+#    #+#             */
-/*   Updated: 2024/05/16 14:15:21 by vipalaci         ###   ########.fr       */
+/*   Updated: 2024/05/20 17:51:07 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int	main(void)
 	std::cout << "d is " << d << std::endl;
 
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	
 	return (0);
 }
