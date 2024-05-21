@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 18:15:43 by vini              #+#    #+#             */
-/*   Updated: 2024/05/20 18:51:39 by vini             ###   ########.fr       */
+/*   Updated: 2024/05/21 17:35:14 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,16 @@ public:
 	Fixed	operator-(const Fixed& nb);
 	Fixed	operator*(const Fixed& nb);
 	Fixed	operator/(const Fixed& nb);
+
+	Fixed&	operator++(void);
+	Fixed	operator++(int);
+	Fixed&	operator--(void);
+	Fixed	operator--(int);
+
+	static Fixed&		min(Fixed& first, Fixed& second);
+	static const Fixed&	min(const Fixed& first, const Fixed& second);
+	static Fixed&		max(Fixed& first, Fixed& second);
+	static const Fixed&	max(const Fixed& first, const Fixed& second);
 };
 
 std::ostream& operator<<(std::ostream& out, const Fixed& nbr);
