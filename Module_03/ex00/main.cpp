@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 17:45:52 by vini              #+#    #+#             */
-/*   Updated: 2024/05/21 21:55:41 by vini             ###   ########.fr       */
+/*   Updated: 2024/05/24 15:42:19 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(void)
 	ClapTrap 	claptrap("Claptrap P. Claptrappington");
 	ClapTrap	fragtrap(stock);
 	ClapTrap	ninja("Interplanetary Ninja Assassin");
-	
+
 	fragtrap = ninja;
 
 	claptrap.attack("Interplanetary Ninja Assassin");

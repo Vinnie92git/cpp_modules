@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 22:00:48 by vini              #+#    #+#             */
-/*   Updated: 2024/05/21 22:00:51 by vini             ###   ########.fr       */
+/*   Updated: 2024/05/24 16:53:57 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@
 
 class ClapTrap
 {
-private:
+protected:
 	std::string		name;
 	unsigned int	hitPoints;
+	unsigned int	maxHitpoints;
 	unsigned int	energyPoints;
 	unsigned int	attackDamage;
 

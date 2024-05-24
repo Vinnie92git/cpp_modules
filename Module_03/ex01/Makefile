@@ -6,11 +6,11 @@
 #    By: vini <vini@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/21 21:59:10 by vini              #+#    #+#              #
-#    Updated: 2024/05/21 21:59:37 by vini             ###   ########.fr        #
+#    Updated: 2024/05/24 15:43:16 by vini             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = claptrap
+NAME = scavtrap
 LIB = ar rcs
 RM = rm -f
 CC = c++
