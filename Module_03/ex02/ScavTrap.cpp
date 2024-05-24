@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 22:02:28 by vini              #+#    #+#             */
-/*   Updated: 2024/05/24 18:02:49 by vini             ###   ########.fr       */
+/*   Created: 2024/05/24 17:54:36 by vini              #+#    #+#             */
+/*   Updated: 2024/05/24 17:54:38 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,5 @@ void	ScavTrap::attack(const std::string& target)
 
 void	ScavTrap::guardGate(void)
 {
-	if (this->energyPoints <= 0 || this->hitPoints <= 0)
-	{
-		std::cout << "Scavtrap " << this->name << " is out of juice and can't guard the door!" << std::endl;
-		return ;
-	}
 	std::cout << "Scavtrap " << this->name << " is on guard duty!" << std::endl;
 }

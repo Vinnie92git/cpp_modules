@@ -5,21 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/24 10:28:49 by vini              #+#    #+#             */
-/*   Updated: 2024/05/24 18:03:52 by vini             ###   ########.fr       */
+/*   Created: 2024/05/24 17:53:58 by vini              #+#    #+#             */
+/*   Updated: 2024/05/24 18:08:01 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <iomanip>
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main(void)
 {
-	ScavTrap	stock;
-	ScavTrap	claptrap("Claptrap P. Claptrappington");
-	ScavTrap	fragtrap(stock);
-	ScavTrap	ninja("Interplanetary Ninja Assassin");
+	FragTrap	stock;
+	FragTrap	claptrap("Claptrap P. Claptrappington");
+	FragTrap	fragtrap(stock);
+	FragTrap	ninja("Interplanetary Ninja Assassin");
 
 	fragtrap = ninja;
 
@@ -49,10 +50,10 @@ int	main(void)
 	claptrap.takeDamage(80);
 	ninja.takeDamage(70);
 
-	stock.guardGate();
-	claptrap.guardGate();
-	ninja.guardGate();
-	fragtrap.guardGate();
+	stock.highFivesGuys();
+	claptrap.highFivesGuys();
+	ninja.highFivesGuys();
+	fragtrap.highFivesGuys();
 	
 	return (0);
 }
