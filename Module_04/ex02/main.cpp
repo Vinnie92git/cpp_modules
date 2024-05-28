@@ -6,18 +6,21 @@
 /*   By: vipalaci <vipalaci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 14:25:54 by vipalaci          #+#    #+#             */
-/*   Updated: 2024/05/28 17:44:00 by vipalaci         ###   ########.fr       */
+/*   Updated: 2024/05/28 18:48:33 by vipalaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <iomanip>
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
 int	main(void)
 {
+	{
+		// Animal	abstract;
+	}
 	{
 		const Animal*	a = new Dog();
 		const Animal*	b = new Cat();

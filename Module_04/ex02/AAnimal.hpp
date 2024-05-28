@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vipalaci <vipalaci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 14:25:36 by vipalaci          #+#    #+#             */
-/*   Updated: 2024/05/27 14:27:31 by vipalaci         ###   ########.fr       */
+/*   Updated: 2024/05/28 18:46:47 by vipalaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	Animal& operator=(const Animal& obj);
 	virtual ~Animal();
 	
-	virtual void	makeSound(void) const;
+	virtual void	makeSound(void) const = 0;
 	std::string		getType(void) const;
 };
 
