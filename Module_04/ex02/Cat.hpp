@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vipalaci <vipalaci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/25 21:49:30 by vini              #+#    #+#             */
-/*   Updated: 2024/05/27 13:57:48 by vipalaci         ###   ########.fr       */
+/*   Created: 2024/05/27 14:25:47 by vipalaci          #+#    #+#             */
+/*   Updated: 2024/05/28 18:46:27 by vipalaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CAT_HPP
+#define CAT_HPP
+
 #include <iostream>
 #include <iomanip>
-#include "Cat.hpp"
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-Cat::Cat() : Animal("Cat")
+class Cat : public Animal
 {
-	std::cout << "Cat constructor called." << std::endl;
-}
+private:
+	Brain*	brain;
 
-Cat::~Cat()
-{
-	std::cout << "Cat destructor called." << std::endl;
-}
+public:
+	Cat();
+	Cat(const Cat& obj);
+	Cat& operator=(const Cat& obj);
+	~Cat();
 
-void	Cat::makeSound(void) const
-{
-	std::cout << "One cat is meowing" << std::endl;
-}
+	void	makeSound(void) const;
+};
+
+#endif

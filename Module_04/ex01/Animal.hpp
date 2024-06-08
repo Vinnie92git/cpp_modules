@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vipalaci <vipalaci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/25 21:49:30 by vini              #+#    #+#             */
-/*   Updated: 2024/05/27 13:57:48 by vipalaci         ###   ########.fr       */
+/*   Created: 2024/05/27 14:25:36 by vipalaci          #+#    #+#             */
+/*   Updated: 2024/05/27 14:27:31 by vipalaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
+
 #include <iostream>
 #include <iomanip>
-#include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat")
+class Animal
 {
-	std::cout << "Cat constructor called." << std::endl;
-}
+protected:
+	std::string	type;
 
-Cat::~Cat()
-{
-	std::cout << "Cat destructor called." << std::endl;
-}
+public:
+	Animal();
+	Animal(std::string type);
+	Animal(const Animal& obj);
+	Animal& operator=(const Animal& obj);
+	virtual ~Animal();
+	
+	virtual void	makeSound(void) const;
+	std::string		getType(void) const;
+};
 
-void	Cat::makeSound(void) const
-{
-	std::cout << "One cat is meowing" << std::endl;
-}
+#endif

@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: vipalaci <vipalaci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/05/25 21:49:42 by vini              #+#    #+#              #
-#    Updated: 2024/05/27 14:09:53 by vipalaci         ###   ########.fr        #
+#    Created: 2024/05/27 14:25:57 by vipalaci          #+#    #+#              #
+#    Updated: 2024/05/28 17:20:36 by vipalaci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,13 @@ RM = rm -f
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 # DEBUG = -g3 -fsanitize=address
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 
 OBJ_DIR = ./obj/
 OBJ_FILES = $(SRC:.cpp=.o)
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-HEADER = Animal.hpp Cat.hpp Dog.hpp
+HEADER = Animal.hpp Cat.hpp Dog.hpp Brain.hpp
 
 # COLOURS
 DEF_COLOR = \033[0;39m

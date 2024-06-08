@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: vipalaci <vipalaci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 21:49:27 by vini              #+#    #+#             */
-/*   Updated: 2024/05/26 21:50:16 by vini             ###   ########.fr       */
+/*   Updated: 2024/05/27 13:59:10 by vipalaci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ protected:
 
 public:
 	Animal();
+	Animal(std::string type);
 	Animal(const Animal& obj);
 	Animal& operator=(const Animal& obj);
 	virtual ~Animal();
