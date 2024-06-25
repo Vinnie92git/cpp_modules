@@ -6,22 +6,16 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:08:47 by vipalaci          #+#    #+#             */
-/*   Updated: 2024/05/14 22:26:12 by vini             ###   ########.fr       */
+/*   Updated: 2024/06/25 21:07:30 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Harl.hpp"
 
-int	validInput(std::string input)
-{
-	if (input != "DEBUG" && input != "INFO" && input != "WARNING" && input != "ERROR")
-		return (0);
-	return (1);
-}
-
 void	instructions(void)
 {
+	std::cout << "Use exactly one(1) parameter." << std::endl;
 	std::cout << std::endl;
 	std::cout << "-------------HARL LEVELS--------------" << std::endl;
 	std::cout << "\t\tDEBUG" << std::endl;
@@ -32,22 +26,13 @@ void	instructions(void)
 	std::cout << std::endl;
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	Harl		harl;
-	std::string	input;
 
-	instructions();
-	while (1)
-	{
-		std::cout << "Enter a level: ";
-		std::cin >> input;
-		if (std::cin.eof())
-			break ;
-		if (!validInput(input))
-			std::cout << "Please enter a valid level." << std::endl;
-		else
-			harl.complain(input);
-	}
+	if (argc != 2)
+		instructions();
+	else
+		harl.complain(argv[1]);
 	return (0);
 }

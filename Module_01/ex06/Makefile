@@ -6,7 +6,7 @@
 #    By: vini <vini@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 14:08:30 by vipalaci          #+#    #+#              #
-#    Updated: 2024/06/20 19:43:51 by vini             ###   ########.fr        #
+#    Updated: 2024/06/25 21:25:39 by vini             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = harlFilter
 LIB = ar rcs
 RM = rm -f
 CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 # DEBUG = -g3 -fsanitize=address
 SRC = main.cpp Harl.cpp
 
