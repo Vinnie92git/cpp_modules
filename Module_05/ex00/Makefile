@@ -6,7 +6,7 @@
 #    By: vini <vini@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/04 17:44:55 by vini              #+#    #+#              #
-#    Updated: 2024/11/04 17:45:43 by vini             ###   ########.fr        #
+#    Updated: 2024/11/10 19:55:08 by vini             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,13 @@ RM = rm -f
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 # DEBUG = -g3 -fsanitize=address
-SRC =
+SRC = main.cpp Bureaucrat.cpp
 
 OBJ_DIR = ./obj/
 OBJ_FILES = $(SRC:.cpp=.o)
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-HEADER =
+HEADER = Bureaucrat.hpp
 
 # COLOURS
 DEF_COLOR = \033[0;39m

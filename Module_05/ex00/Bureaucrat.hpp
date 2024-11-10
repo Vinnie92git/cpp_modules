@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 19:53:24 by vini              #+#    #+#             */
-/*   Updated: 2024/11/07 22:41:56 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/10 20:05:08 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ public:
 
 	class GradeTooHighException : public std::exception {
 		public:
-			const char* what() const throw();
+			virtual const char* what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception {
 		public:
-			const char* what() const throw();
+			virtual const char* what() const throw();
 	};
 
 private:
