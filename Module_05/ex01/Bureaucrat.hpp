@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 19:53:24 by vini              #+#    #+#             */
-/*   Updated: 2024/11/10 22:26:42 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/10 22:25:56 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ public:
 
 private:
 	std::string const	name;
-	int		grade;
+	int					grade;
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat);

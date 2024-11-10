@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:02:17 by vini              #+#    #+#             */
-/*   Updated: 2024/11/10 22:29:37 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/10 22:26:07 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 		this->grade = grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& toCopy) : name(toCopy.getName()), grade(toCopy.getGrade())
+Bureaucrat::Bureaucrat(const Bureaucrat& toCopy) : name(toCopy.getName())
 {
 	std::cout << "Bureaucrat copy constructor called" << std::endl;
 	*this = toCopy;
