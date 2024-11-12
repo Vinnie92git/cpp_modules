@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 19:53:24 by vini              #+#    #+#             */
-/*   Updated: 2024/11/10 22:25:56 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/12 22:13:12 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@ public:
 	Bureaucrat& operator=(const Bureaucrat& toAssign);
 	~Bureaucrat();
 
-	std::string		getName() const;
-	int	getGrade() const;
+	std::string	getName() const;
+	int			getGrade() const;
 
 	void	increment();
 	void	decrement();
+	void	signForm(std::string form, int status);
 
 	class GradeTooHighException : public std::exception {
 		public:

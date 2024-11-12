@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:02:17 by vini              #+#    #+#             */
-/*   Updated: 2024/11/10 22:29:37 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/12 20:59:33 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Bureaucrat default destructor called" << std::endl;
 }
 
-std::string		Bureaucrat::getName() const
+std::string	Bureaucrat::getName() const
 {
 	return this->name;
 }

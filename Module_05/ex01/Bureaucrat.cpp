@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:02:17 by vini              #+#    #+#             */
-/*   Updated: 2024/11/10 22:26:07 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/12 23:05:09 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Bureaucrat default destructor called" << std::endl;
 }
 
-std::string		Bureaucrat::getName() const
+std::string	Bureaucrat::getName() const
 {
 	return this->name;
 }
@@ -66,6 +66,16 @@ void	Bureaucrat::increment()
 	}
 	else
 		throw Bureaucrat::GradeTooHighException();
+}
+
+void	Bureaucrat::signForm(std::string form, int status)
+{
+	if (status == 1)
+		std::cout << *this << ", couldn't sign " << form << " because it's already signed." << std::endl;
+	else if (status == 2)
+		std::cout << *this << ", couldn't sign " << form << " because their grade is too low." << std::endl;
+	else
+		std::cout << *this << ", signed " << form << std::endl;
 }
 
 void	Bureaucrat::decrement()
@@ -91,6 +101,6 @@ const char*	Bureaucrat::GradeTooLowException::what() const throw()
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat)
 {
-	out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << ".";
+	out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
 	return out;
 }

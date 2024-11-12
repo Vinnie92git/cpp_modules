@@ -6,15 +6,16 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 20:48:43 by vini              #+#    #+#             */
-/*   Updated: 2024/11/10 22:18:27 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/12 21:54:04 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
 
 #include <iostream>
 #include <string>
+#include "Bureaucrat.hpp"
 
 class Form
 {
@@ -25,16 +26,12 @@ public:
 	Form& operator=(const Form& toAssign);
 	~Form();
 
-	std::string		getName() const;
-	bool			getSignature() const;
-	int	getSignGrade() const;
-	int	getExecGrade() const;
+	std::string	getName() const;
+	bool		getSignature() const;
+	int			getSignGrade() const;
+	int			getExecGrade() const;
 
-	void	beSigned();
-	void	incrementSignGrade();
-	void	decrementSignGrade();
-	void	incrementExecGrade();
-	void	decrementExecGrade();
+	void	beSigned(Bureaucrat& bureaucrat);
 
 	class GradeTooHighException : public std::exception {
 		public:
