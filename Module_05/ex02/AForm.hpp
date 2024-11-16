@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 20:48:43 by vini              #+#    #+#             */
-/*   Updated: 2024/11/13 19:03:23 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/16 01:27:51 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 	int			getExecGrade() const;
 
 	void			beSigned(Bureaucrat& bureaucrat);
-	virtual void	execute(Bureaucrat const & executor) const = 0;
+	// virtual void	execute(Bureaucrat const & executor) const = 0;
 
 	class GradeTooHighException : public std::exception {
 		public:
