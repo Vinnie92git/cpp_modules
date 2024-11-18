@@ -6,14 +6,16 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 22:14:33 by vini              #+#    #+#             */
-/*   Updated: 2024/11/18 15:43:04 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/18 21:56:47 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cstdlib>
+#include <ctime>
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm()
-	: AForm("RRF00", false, 72, 45), target("No target")
+	: AForm("RRF00", false, 72, 45), target("EVERYONE")
 {
 	std::cout << "RobotomyRequestForm default constructor called" << std::endl;
 }

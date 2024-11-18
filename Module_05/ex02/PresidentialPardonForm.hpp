@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 20:33:52 by vini              #+#    #+#             */
-/*   Updated: 2024/11/18 16:11:47 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/18 21:30:03 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	PresidentialPardonForm(std::string target);
 	PresidentialPardonForm(const PresidentialPardonForm& toCopy);
 	PresidentialPardonForm& operator=(const PresidentialPardonForm& toAssign);
-	~PresidentialPardonForm();
+	virtual ~PresidentialPardonForm();
 
 	void	execute(Bureaucrat const & executor) const;
 

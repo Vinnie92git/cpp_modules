@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 19:53:24 by vini              #+#    #+#             */
-/*   Updated: 2024/11/18 15:12:10 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/18 21:48:03 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include <string>
 #include "AForm.hpp"
+
+class AForm;
 
 class Bureaucrat
 {

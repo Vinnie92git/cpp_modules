@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 20:34:37 by vini              #+#    #+#             */
-/*   Updated: 2024/11/18 16:12:03 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/18 21:30:28 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	ShrubberyCreationForm(std::string target);
 	ShrubberyCreationForm(const ShrubberyCreationForm& toCopy);
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& toAssign);
-	~ShrubberyCreationForm();
+	virtual ~ShrubberyCreationForm();
 
 	void	execute(Bureaucrat const & executor) const;
 

@@ -6,14 +6,14 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 22:15:13 by vini              #+#    #+#             */
-/*   Updated: 2024/11/18 15:48:45 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/18 21:57:00 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-	: AForm("SCF00", false, 145, 137), target("No target")
+	: AForm("SCF00", false, 145, 137), target("EVERYWHERE")
 {
 	std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
 }

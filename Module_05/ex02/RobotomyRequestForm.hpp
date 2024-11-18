@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 20:34:33 by vini              #+#    #+#             */
-/*   Updated: 2024/11/18 16:11:57 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/18 21:30:12 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	RobotomyRequestForm(std::string target);
 	RobotomyRequestForm(const RobotomyRequestForm& toCopy);
 	RobotomyRequestForm& operator=(const RobotomyRequestForm& toAssign);
-	~RobotomyRequestForm();
+	virtual ~RobotomyRequestForm();
 
 	void	execute(Bureaucrat const & executor) const;
 

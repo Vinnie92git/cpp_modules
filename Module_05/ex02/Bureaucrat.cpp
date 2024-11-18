@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:02:17 by vini              #+#    #+#             */
-/*   Updated: 2024/11/18 15:12:41 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/18 22:32:43 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,12 @@ void	Bureaucrat::signForm(std::string form, int status)
 
 void	Bureaucrat::executeForm(AForm const & form)
 {
-	
+	if (form.getSignature() != true)
+		std::cout << *this << ", couldn't execute " << form.getName() << " because it's not signed." << std::endl;
+	else if (this->getGrade() > form.getExecGrade())
+		std::cout << *this << ", couldn't execute " << form.getName() << " because their grade is too low." << std::endl;
+	form.execute(*this);
+	std::cout << *this << ", executed " << form.getName() << std::endl;
 }
 
 const char*	Bureaucrat::GradeTooHighException::what() const throw()
