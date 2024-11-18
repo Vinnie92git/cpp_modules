@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 22:15:13 by vini              #+#    #+#             */
-/*   Updated: 2024/11/15 22:36:01 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/18 15:48:45 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,25 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 	std::cout << "ShrubberyCreationForm default destructor called" << std::endl;
+}
+
+void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+{
+	if (this->getSignature() != true)
+		throw AForm::FormNotSignedException();
+	if (executor.getGrade() > this->getExecGrade())
+		throw AForm::GradeTooLowException();
+	std::ofstream	file;
+	std::string		filename = this->target + "_shrubbery";
+	file.open(filename.c_str());
+	file << "       _-_" << std::endl;
+	file << "    /~~   ~~\\" << std::endl;
+	file << " /~~         ~~\\" << std::endl;
+	file << "{               }" << std::endl;
+	file << " \\  _-     -_  /" << std::endl;
+	file << "   ~  \\\\ //  ~" << std::endl;
+	file << "_- -   | | _- _" << std::endl;
+	file << "  _ -  | |   -_" << std::endl;
+	file << "      // \\\\" << std::endl;
+	file.close();
 }

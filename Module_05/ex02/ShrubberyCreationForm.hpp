@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 20:34:37 by vini              #+#    #+#             */
-/*   Updated: 2024/11/15 22:14:07 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/18 16:12:03 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <iostream>
 #include <string>
 #include "AForm.hpp"
-#include "Bureaucrat.hpp"
 
 class ShrubberyCreationForm : public AForm
 {
@@ -26,6 +25,8 @@ public:
 	ShrubberyCreationForm(const ShrubberyCreationForm& toCopy);
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& toAssign);
 	~ShrubberyCreationForm();
+
+	void	execute(Bureaucrat const & executor) const;
 
 private:
 	std::string	target;

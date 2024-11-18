@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 20:48:39 by vini              #+#    #+#             */
-/*   Updated: 2024/11/16 00:51:23 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/18 15:20:48 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,11 @@ const char*	AForm::GradeTooHighException::what() const throw()
 const char*	AForm::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too low for the form.");
+}
+
+const char*	AForm::FormNotSignedException::what() const throw()
+{
+	return ("The form is not signed.");
 }
 
 std::ostream& operator<<(std::ostream& out, const AForm& form)

@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 21:20:04 by vini              #+#    #+#             */
-/*   Updated: 2024/11/15 22:05:06 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/18 15:34:47 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,13 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 PresidentialPardonForm::~PresidentialPardonForm()
 {
 	std::cout << "PresidentialPardonForm default destructor called" << std::endl;
+}
+
+void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
+{
+	if (this->getSignature() != true)
+		throw AForm::FormNotSignedException();
+	if (executor.getGrade() > this->getExecGrade())
+		throw AForm::GradeTooLowException();
+	std::cout << this->target << "has been pardoned by Zaphod Beeblebrox" << std::endl;
 }

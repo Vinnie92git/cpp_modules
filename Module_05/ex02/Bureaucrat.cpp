@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:02:17 by vini              #+#    #+#             */
-/*   Updated: 2024/11/12 23:05:09 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/18 15:12:41 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,17 @@ void	Bureaucrat::increment()
 		throw Bureaucrat::GradeTooHighException();
 }
 
+void	Bureaucrat::decrement()
+{
+	if (this->grade < 150)
+	{
+		this->grade++;
+		std::cout << this->name << " has been demoted." << std::endl;
+	}
+	else
+		throw Bureaucrat::GradeTooLowException();
+}
+
 void	Bureaucrat::signForm(std::string form, int status)
 {
 	if (status == 1)
@@ -78,15 +89,9 @@ void	Bureaucrat::signForm(std::string form, int status)
 		std::cout << *this << ", signed " << form << std::endl;
 }
 
-void	Bureaucrat::decrement()
+void	Bureaucrat::executeForm(AForm const & form)
 {
-	if (this->grade < 150)
-	{
-		this->grade++;
-		std::cout << this->name << " has been demoted." << std::endl;
-	}
-	else
-		throw Bureaucrat::GradeTooLowException();
+	
 }
 
 const char*	Bureaucrat::GradeTooHighException::what() const throw()

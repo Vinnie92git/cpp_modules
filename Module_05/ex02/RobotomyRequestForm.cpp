@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 22:14:33 by vini              #+#    #+#             */
-/*   Updated: 2024/11/15 22:36:19 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/18 15:43:04 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,20 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& t
 RobotomyRequestForm::~RobotomyRequestForm()
 {
 	std::cout << "RobotomyRequestForm default destructor called" << std::endl;
+}
+
+void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
+{
+	if (this->getSignature() != true)
+		throw AForm::FormNotSignedException();
+	if (executor.getGrade() > this->getExecGrade())
+		throw AForm::GradeTooLowException();
+	std::cout << "Some drilling noises" << std::endl;
+	sleep(1);
+	srand(time(NULL));
+	int	nb = rand() % 100 + 1;
+	if (nb % 2 == 0)
+		std::cout << this->target << " has been successfully robotomized." << std::endl;
+	else
+		std::cout << "The robotomy for " << this->target << " has failed." << std::endl;
 }
