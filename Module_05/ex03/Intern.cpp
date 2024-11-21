@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 22:36:51 by vini              #+#    #+#             */
-/*   Updated: 2024/11/18 23:01:44 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/21 16:51:36 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,38 @@ Intern::~Intern()
 	std::cout << "Intern default destructor called" << std::endl;
 }
 
+AForm*	makeShrubberyForm(std::string target)
+{
+	AForm*	form = new ShrubberyCreationForm(target);
+	return form;
+}
+
+AForm*	makeRobotomyForm(std::string target)
+{
+	AForm*	form = new RobotomyRequestForm(target);
+	return form;
+}
+
+AForm*	makePresidentialForm(std::string target)
+{
+	AForm*	form = new PresidentialPardonForm(target);
+	return form;
+}
+
 AForm* Intern::makeForm(std::string formName, std::string formTarget)
 {
-	
+	AForm*		form = NULL;
+	funcPtr		formFuncs[] = {&Intern::makeShrubberyForm, &Intern::makeRobotomyForm, &Intern::makePresidentialForm};
+	std::string	forms[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+	for (size_t i = 0; i < 3; i++)
+	{
+		if (formName == forms[i])
+		{
+			form = (this->*formFuncs[i])(formTarget);
+			std::cout << "Intern creates " << formName << "." << std::endl;
+			return form;
+		}
+	}
+	std::cout << formName << " it's an invalid form name." << std::endl;
+	return NULL;
 }
