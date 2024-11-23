@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 22:36:51 by vini              #+#    #+#             */
-/*   Updated: 2024/11/21 16:51:36 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/23 16:13:22 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Intern::Intern(const Intern& toCopy)
 
 Intern& Intern::operator=(const Intern& toAssign)
 {
+	(void)toAssign;
 	std::cout << "Intern copy assignment operator called" << std::endl;
 	return *this;
 }
@@ -34,19 +35,19 @@ Intern::~Intern()
 	std::cout << "Intern default destructor called" << std::endl;
 }
 
-AForm*	makeShrubberyForm(std::string target)
+AForm*	Intern::makeShrubberyForm(std::string target)
 {
 	AForm*	form = new ShrubberyCreationForm(target);
 	return form;
 }
 
-AForm*	makeRobotomyForm(std::string target)
+AForm*	Intern::makeRobotomyForm(std::string target)
 {
 	AForm*	form = new RobotomyRequestForm(target);
 	return form;
 }
 
-AForm*	makePresidentialForm(std::string target)
+AForm*	Intern::makePresidentialForm(std::string target)
 {
 	AForm*	form = new PresidentialPardonForm(target);
 	return form;
@@ -62,7 +63,7 @@ AForm* Intern::makeForm(std::string formName, std::string formTarget)
 		if (formName == forms[i])
 		{
 			form = (this->*formFuncs[i])(formTarget);
-			std::cout << "Intern creates " << formName << "." << std::endl;
+			std::cout << "Intern creates " << formName << " form." << std::endl;
 			return form;
 		}
 	}
