@@ -6,7 +6,7 @@
 #    By: vini <vini@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/04 17:44:55 by vini              #+#    #+#              #
-#    Updated: 2024/11/23 16:39:08 by vini             ###   ########.fr        #
+#    Updated: 2024/11/24 21:33:48 by vini             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,13 @@ RM = rm -f
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 # DEBUG = -g3 -fsanitize=address
-SRC = main.cpp
+SRC = main.cpp ScalarConverter.cpp
 
 OBJ_DIR = ./obj/
 OBJ_FILES = $(SRC:.cpp=.o)
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-HEADER =
+HEADER = ScalarConverter.hpp
 
 # COLOURS
 DEF_COLOR = \033[0;39m
