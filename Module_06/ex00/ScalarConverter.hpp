@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 21:31:46 by vini              #+#    #+#             */
-/*   Updated: 2024/11/24 23:02:45 by vini             ###   ########.fr       */
+/*   Updated: 2024/11/26 22:19:28 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <limits>
 
 class ScalarConverter
 {
