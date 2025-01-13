@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 21:31:50 by vini              #+#    #+#             */
-/*   Updated: 2024/11/26 22:38:23 by vini             ###   ########.fr       */
+/*   Updated: 2025/01/13 20:15:43 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,21 @@ static void	charConversion(const std::string& param)
 	std::cout << "int: " << static_cast<int>(c) << std::endl;
 	std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
 	std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
+}
+
+static void	intConversion(const std::string& param)
+{
+	int	nbr = atoi(param.c_str());
+
+	if (nbr < 0 || nbr > 127)
+		std::cout << "char: impossible" << std::endl;
+	else if (nbr < 32 || nbr == 127)
+		std::cout << "char: non-displayable" << std::endl;
+	else
+		std::cout << "char: " << static_cast<char>(nbr) << std::endl;
+	std::cout << "int: " << nbr << std::endl;
+	std::cout << "float: " << static_cast<float>(nbr) << ".0f" << std::endl;
+	std::cout << "double: " << static_cast<double>(nbr) << ".0" << std::endl;
 }
 
 static void	pseudoConversion(const std::string& param)
@@ -85,6 +100,14 @@ void	ScalarConverter::convert(const std::string& param)
 	else if (param == "+inff" || param == "-inff" || param == "nanf"
 			|| param == "+inf" || param == "-inf" || param == "nan")
 			pseudoConversion(param);
+	else if (std::isdigit(param[0]))
+	{
+		long	i = 0;
+		while (std::isdigit(param[i]))
+			i++;
+		if (param.length() == i)
+			intConversion(param);
+	}
 	else
 		std::cout << "In progress..." << std::endl;
 }
