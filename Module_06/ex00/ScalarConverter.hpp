@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 21:31:46 by vini              #+#    #+#             */
-/*   Updated: 2025/01/14 20:58:59 by vini             ###   ########.fr       */
+/*   Updated: 2025/01/15 16:59:43 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,15 @@
 #include <iomanip>
 #include <string>
 #include <limits>
+#include <climits>
+#include <limits.h>
+#include <float.h>
+#include <cstdlib>
 
 class ScalarConverter
 {
 public:
-	static void	convert(const std::string& param);
+	static void	convert(std::string param);
 
 private:
 	ScalarConverter();

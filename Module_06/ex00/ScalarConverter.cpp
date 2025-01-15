@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 21:31:50 by vini              #+#    #+#             */
-/*   Updated: 2025/01/15 16:47:00 by vini             ###   ########.fr       */
+/*   Updated: 2025/01/15 16:53:51 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void		error()
 	std::cout << "double: " << 0 << std::endl;
 }
 
-static void	charConversion(const std::string& param)
+static void	charConversion(std::string param)
 {
 	char	c = param[0];
 	std::cout << "char: " << c << std::endl;
@@ -52,7 +52,7 @@ static void	charConversion(const std::string& param)
 	std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
 }
 
-static void	floatConversion(const std::string& param)
+static void	floatConversion(std::string param)
 {
 	float	n = atof(param.c_str());
 
@@ -67,7 +67,7 @@ static void	floatConversion(const std::string& param)
 	std::cout << "double: " << std::fixed << std::setprecision(2) << static_cast<double>(n) << std::endl;
 }
 
-static void	doubleConversion(const std::string& param)
+static void	doubleConversion(std::string param)
 {
 	double	n = atof(param.c_str());
 
@@ -82,7 +82,7 @@ static void	doubleConversion(const std::string& param)
 	std::cout << "float: " << std::fixed << std::setprecision(2) << n << std::endl;
 }
 
-static void	intConversion(const std::string& param)
+static void	intConversion(std::string param)
 {
 	int	nbr = atoi(param.c_str());
 
@@ -97,7 +97,7 @@ static void	intConversion(const std::string& param)
 	std::cout << "double: " << static_cast<double>(nbr) << ".0" << std::endl;
 }
 
-static void	pseudoConversion(const std::string& param)
+static void	pseudoConversion(std::string param)
 {
 	float	pseudoFloat;
 	double	pseudoDouble;
@@ -131,7 +131,7 @@ static void	pseudoConversion(const std::string& param)
 	}
 }
 
-void	ScalarConverter::convert(const std::string& param)
+void	ScalarConverter::convert(std::string param)
 {
 	if (std::isprint(param[0]) && !std::isdigit(param[0]) && param.length() == 1)
 		charConversion(param);
@@ -140,7 +140,7 @@ void	ScalarConverter::convert(const std::string& param)
 			pseudoConversion(param);
 	else if (param[param.length() - 1] == 'f')
 	{
-		long int	i = 0;
+		long unsigned int	i = 0;
 		while (i < param.length() - 1 && (std::isdigit(param[i]) || param[i] == '.'))
 			i++;
 		if (i == param.length() - 1)
@@ -150,7 +150,7 @@ void	ScalarConverter::convert(const std::string& param)
 	}
 	else if (param.find('.') != std::string::npos)
 	{
-		long int	i = 0;
+		long unsigned int	i = 0;
 		while (std::isdigit(param[i]) || param[i] == '.')
 			i++;
 		if (i == param.length())
@@ -160,7 +160,7 @@ void	ScalarConverter::convert(const std::string& param)
 	}
 	else if (std::isdigit(param[0]))
 	{
-		long	i = 0;
+		long unsigned int	i = 0;
 		while (std::isdigit(param[i]))
 			i++;
 		if (param.length() == i)
