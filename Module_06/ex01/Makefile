@@ -6,23 +6,23 @@
 #    By: vini <vini@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/04 17:44:55 by vini              #+#    #+#              #
-#    Updated: 2024/11/23 16:39:41 by vini             ###   ########.fr        #
+#    Updated: 2025/01/15 17:52:12 by vini             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =
+NAME = serializer
 LIB = ar rcs
 RM = rm -f
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 # DEBUG = -g3 -fsanitize=address
-SRC = main.cpp
+SRC = main.cpp Serializer.cpp Data.cpp
 
 OBJ_DIR = ./obj/
 OBJ_FILES = $(SRC:.cpp=.o)
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-HEADER =
+HEADER = Serializer.hpp Data.hpp
 
 # COLOURS
 DEF_COLOR = \033[0;39m

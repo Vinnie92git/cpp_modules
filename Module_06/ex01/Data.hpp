@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 19:41:40 by vini              #+#    #+#             */
-/*   Updated: 2025/01/15 17:13:30 by vini             ###   ########.fr       */
+/*   Created: 2025/01/15 17:52:29 by vini              #+#    #+#             */
+/*   Updated: 2025/01/15 20:26:52 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iomanip>
+#ifndef DATA_HPP
+#define DATA_HPP
 
-int	main(void)
+#include <iomanip>
+#include <iostream>
+#include <stdint.h>
+
+class Data
 {
-	
-}
+public:
+	Data();
+	Data(const Data& toCopy);
+	Data& operator=(const Data& toAssign);
+	~Data();
+
+private:
+	int			id;
+	std::string	content;
+};
+
+#endif
