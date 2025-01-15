@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 21:31:50 by vini              #+#    #+#             */
-/*   Updated: 2025/01/14 20:52:52 by vini             ###   ########.fr       */
+/*   Updated: 2025/01/15 16:47:00 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,14 @@ ScalarConverter::~ScalarConverter()
 	std::cout << "ScalarConverter default destructor called" << std::endl;
 }
 
+static void		error()
+{
+	std::cout << "char: impossible" << std::endl;
+	std::cout << "int: " << 0 << std::endl;
+	std::cout << "float: " << 0 << std::endl;
+	std::cout << "double: " << 0 << std::endl;
+}
+
 static void	charConversion(const std::string& param)
 {
 	char	c = param[0];
@@ -57,6 +65,21 @@ static void	floatConversion(const std::string& param)
 	std::cout << "int: " << static_cast<int>(n) << std::endl;
 	std::cout << "float: " << std::fixed << std::setprecision(2) << n << "f" << std::endl;
 	std::cout << "double: " << std::fixed << std::setprecision(2) << static_cast<double>(n) << std::endl;
+}
+
+static void	doubleConversion(const std::string& param)
+{
+	double	n = atof(param.c_str());
+
+	if (n < 0 || n > 127)
+		std::cout << "char: impossible" << std::endl;
+	else if (n < 32 || n == 127)
+		std::cout << "char: non-displayable" << std::endl;
+	else
+		std::cout << "char: " << static_cast<char>(n) << std::endl;
+	std::cout << "int: " << static_cast<int>(n) << std::endl;
+	std::cout << "float: " << std::fixed << std::setprecision(2) << static_cast<float>(n) << "f" << std::endl;
+	std::cout << "float: " << std::fixed << std::setprecision(2) << n << std::endl;
 }
 
 static void	intConversion(const std::string& param)
@@ -110,7 +133,7 @@ static void	pseudoConversion(const std::string& param)
 
 void	ScalarConverter::convert(const std::string& param)
 {
-	if (std::isalpha(param[0]) && param.length() == 1)
+	if (std::isprint(param[0]) && !std::isdigit(param[0]) && param.length() == 1)
 		charConversion(param);
 	else if (param == "+inff" || param == "-inff" || param == "nanf"
 			|| param == "+inf" || param == "-inf" || param == "nan")
@@ -122,6 +145,18 @@ void	ScalarConverter::convert(const std::string& param)
 			i++;
 		if (i == param.length() - 1)
 			floatConversion(param);
+		else
+			error();
+	}
+	else if (param.find('.') != std::string::npos)
+	{
+		long int	i = 0;
+		while (std::isdigit(param[i]) || param[i] == '.')
+			i++;
+		if (i == param.length())
+			doubleConversion(param);
+		else
+			error();
 	}
 	else if (std::isdigit(param[0]))
 	{
@@ -130,7 +165,9 @@ void	ScalarConverter::convert(const std::string& param)
 			i++;
 		if (param.length() == i)
 			intConversion(param);
+		else
+			error();
 	}
 	else
-		std::cout << "In progress..." << std::endl;
+		error();
 }
