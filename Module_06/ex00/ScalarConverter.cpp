@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 21:31:50 by vini              #+#    #+#             */
-/*   Updated: 2025/01/13 20:15:43 by vini             ###   ########.fr       */
+/*   Updated: 2025/01/14 20:52:52 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,21 @@ static void	charConversion(const std::string& param)
 	std::cout << "int: " << static_cast<int>(c) << std::endl;
 	std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
 	std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
+}
+
+static void	floatConversion(const std::string& param)
+{
+	float	n = atof(param.c_str());
+
+	if (n < 0 || n > 127)
+		std::cout << "char: impossible" << std::endl;
+	else if (n < 32 || n == 127)
+		std::cout << "char: non-displayable" << std::endl;
+	else
+		std::cout << "char: " << static_cast<char>(n) << std::endl;
+	std::cout << "int: " << static_cast<int>(n) << std::endl;
+	std::cout << "float: " << std::fixed << std::setprecision(2) << n << "f" << std::endl;
+	std::cout << "double: " << std::fixed << std::setprecision(2) << static_cast<double>(n) << std::endl;
 }
 
 static void	intConversion(const std::string& param)
@@ -100,6 +115,14 @@ void	ScalarConverter::convert(const std::string& param)
 	else if (param == "+inff" || param == "-inff" || param == "nanf"
 			|| param == "+inf" || param == "-inf" || param == "nan")
 			pseudoConversion(param);
+	else if (param[param.length() - 1] == 'f')
+	{
+		long int	i = 0;
+		while (i < param.length() - 1 && (std::isdigit(param[i]) || param[i] == '.'))
+			i++;
+		if (i == param.length() - 1)
+			floatConversion(param);
+	}
 	else if (std::isdigit(param[0]))
 	{
 		long	i = 0;
