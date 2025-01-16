@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 17:45:28 by vini              #+#    #+#             */
-/*   Updated: 2025/01/15 19:57:48 by vini             ###   ########.fr       */
+/*   Updated: 2025/01/16 18:23:27 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,25 @@
 
 Serializer::Serializer()
 {
-	std::cout << "Serializer default constructor called" << std::endl;
+	// std::cout << "Serializer default constructor called" << std::endl;
 }
 
 Serializer::Serializer(const Serializer& toCopy)
 {
-	std::cout << "Serializer copy constructor called" << std::endl;
-	*this = toCopy;
+	(void)toCopy;
+	// std::cout << "Serializer copy constructor called" << std::endl;
 }
 
 Serializer& Serializer::operator=(const Serializer& toAssign)
 {
-	std::cout << "Serializer copy assignment operator called" << std::endl;
+	(void)toAssign;
+	// std::cout << "Serializer copy assignment operator called" << std::endl;
 	return *this;
 }
 
 Serializer::~Serializer()
 {
-	std::cout << "Serializer default destructor called" << std::endl;
+	// std::cout << "Serializer default destructor called" << std::endl;
 }
 
 uintptr_t	Serializer::serialize(Data* ptr)

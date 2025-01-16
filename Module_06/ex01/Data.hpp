@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 17:52:29 by vini              #+#    #+#             */
-/*   Updated: 2025/01/15 20:26:52 by vini             ###   ########.fr       */
+/*   Updated: 2025/01/16 19:13:16 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,14 @@ public:
 	Data& operator=(const Data& toAssign);
 	~Data();
 
+	std::string	getContent();
+	int			getId();
+
 private:
-	int			id;
 	std::string	content;
+	int			id;
 };
+
+std::ostream& operator<<(std::ostream& out, Data& data);
 
 #endif
