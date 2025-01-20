@@ -6,11 +6,11 @@
 #    By: vini <vini@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 12:52:20 by vini              #+#    #+#              #
-#    Updated: 2025/01/17 12:52:22 by vini             ###   ########.fr        #
+#    Updated: 2025/01/20 19:54:38 by vini             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =
+NAME = iter
 LIB = ar rcs
 RM = rm -f
 CC = c++
@@ -22,7 +22,7 @@ OBJ_DIR = ./obj/
 OBJ_FILES = $(SRC:.cpp=.o)
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-HEADER =
+HEADER = iter.hpp
 
 # COLOURS
 DEF_COLOR = \033[0;39m

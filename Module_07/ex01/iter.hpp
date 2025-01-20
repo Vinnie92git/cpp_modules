@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/17 12:53:47 by vini              #+#    #+#             */
-/*   Updated: 2025/01/20 20:25:16 by vini             ###   ########.fr       */
+/*   Created: 2025/01/20 18:54:29 by vini              #+#    #+#             */
+/*   Updated: 2025/01/20 19:46:06 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ITER_HPP
+#define ITER_HPP
+
 #include <iostream>
 #include <iomanip>
-#include "iter.hpp"
 
-template<typename T>
-void	print(T& param)
+template<typename T, typename F>
+void	iter(T* array, size_t len, F func)
 {
-	std::cout << param;
+	for (size_t i = 0; i < len; i++)
+		func(array[i]);
 }
 
-int	main(void)
-{
-	int		intArray[] = {1, 2, 3, 4};
-	char	charArray[] = "hello, world!";
-	size_t	len1 = sizeof(intArray) / sizeof(intArray[0]);
-	size_t	len2 = sizeof(charArray) / sizeof(charArray[0]);
-
-	iter(intArray, len1, print<int>);
-	std::cout << std::endl;
-	iter(charArray, len2, print<char>);
-	std::cout << std::endl;
-
-	return 0;
-}
+#endif
