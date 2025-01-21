@@ -6,11 +6,11 @@
 #    By: vini <vini@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 12:51:58 by vini              #+#    #+#              #
-#    Updated: 2025/01/17 12:52:01 by vini             ###   ########.fr        #
+#    Updated: 2025/01/21 21:59:58 by vini             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =
+NAME = array
 LIB = ar rcs
 RM = rm -f
 CC = c++
@@ -22,7 +22,7 @@ OBJ_DIR = ./obj/
 OBJ_FILES = $(SRC:.cpp=.o)
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-HEADER =
+HEADER = array.hpp
 
 # COLOURS
 DEF_COLOR = \033[0;39m
