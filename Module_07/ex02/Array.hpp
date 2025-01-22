@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 20:31:49 by vini              #+#    #+#             */
-/*   Updated: 2025/01/21 22:45:26 by vini             ###   ########.fr       */
+/*   Updated: 2025/01/22 15:24:41 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,58 +22,69 @@ class Array
 public:
 	Array()
 	{
-		content = new T[0];
-		arrayLen = 0;
+		array = new T[0];
+		arraySize = 0;
 	}
 
 	Array(unsigned int n)
 	{
-		content = new T[n];
-		arrayLen = n;
+		array = new T[n];
+		arraySize = n;
 	}
 
-	Array(Array& toCopy)
+	Array(const Array& toCopy)
 	{
-		// arrayLen = toCopy.size();
-		// content = new T[arrayLen];
-		// for (int i = 0; i < arrayLen; i++)
-		// 	content[i] = toCopy.content[i];
+		arraySize = toCopy.arraySize;
+		array = new T[arraySize];
+		for (int i = 0; i < arraySize; i++)
+			array[i] = toCopy.array[i];
 		*this = toCopy;
 	}
 
 	Array& operator=(const Array& toAssign)
 	{
-		if (this != toAssign)
+		if (this != &toAssign)
 		{
-			delete[] content;
-			arrayLen = toAssign.size();
-			content = new T[arrayLen];
-			for (int i = 0; i < arrayLen; i++)
-				content[i] = toAssign.content[i];
+			delete[] array;
+			arraySize = toAssign.arraySize;
+			array = new T[arraySize];
+			for (int i = 0; i < arraySize; i++)
+				array[i] = toAssign.array[i];
 		}
 		return *this;
 	}
 
 	T& operator[](int i)
 	{
-		if (i < 0 || i >= arrayLen)
-			throw std::out_of_range("Error: index is out of bounds");
-		return content[i];
+		if (i < 0 || i >= arraySize)
+			throw Array<T>::OutOfBoundsException();
+		return array[i];
 	}
 
 	~Array()
 	{
-		delete[] content;
+		delete[] array;
 	}
 
 	int	size()
 	{
-		return arrayLen;
+		return arraySize;
 	}
 
+	class OutOfBoundsException : public std::exception {
+		public:
+			virtual const char* what() const throw();
+	};
+
 private:
-	T*	content;
-	int	arrayLen;
+	T*	array;
+	int	arraySize;
 };
+
+template<typename T>
+const char*	Array<T>::OutOfBoundsException::what() const throw()
+{
+	return ("Error: index is out of bounds");
+}
 
 #endif

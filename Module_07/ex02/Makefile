@@ -6,7 +6,7 @@
 #    By: vini <vini@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 12:51:58 by vini              #+#    #+#              #
-#    Updated: 2025/01/21 21:59:58 by vini             ###   ########.fr        #
+#    Updated: 2025/01/22 14:59:19 by vini             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ OBJ_DIR = ./obj/
 OBJ_FILES = $(SRC:.cpp=.o)
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-HEADER = array.hpp
+HEADER = Array.hpp
 
 # COLOURS
 DEF_COLOR = \033[0;39m
