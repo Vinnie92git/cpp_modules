@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/23 20:37:55 by vini              #+#    #+#             */
-/*   Updated: 2025/01/27 22:05:23 by vini             ###   ########.fr       */
+/*   Created: 2025/01/27 20:01:29 by vini              #+#    #+#             */
+/*   Updated: 2025/01/27 21:45:12 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SPAN_HPP
+#define SPAN_HPP
+
 #include <iostream>
 #include <iomanip>
-#include "Span.hpp"
+#include <vector>
+#include <algorithm>
+#include <stdexcept>
+#include <limits>
 
-int	main(void)
+class Span
 {
-	Span sp = Span(5);
-	sp.addNumber(6);
-	sp.addNumber(3);
-	sp.addNumber(17);
-	sp.addNumber(9);
-	sp.addNumber(11);
-	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
-	return 0;
-}
+public:
+	Span();
+	Span(unsigned int n);
+	Span(const Span& toCopy);
+	Span& operator=(const Span& toAssign);
+	~Span();
+
+	void	addNumber(int nbr);
+	int		shortestSpan() const;
+	int		longestSpan() const;
+
+private:
+	std::vector<int>	numbers;
+	unsigned int		size;
+};
+
+#endif
