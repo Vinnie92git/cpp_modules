@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 20:02:12 by vini              #+#    #+#             */
-/*   Updated: 2025/01/27 21:57:28 by vini             ###   ########.fr       */
+/*   Updated: 2025/01/28 17:48:12 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,14 @@ void	Span::addNumber(int nbr)
 	if (numbers.size() >= size)
 		throw std::overflow_error("Error: cannot add more numbers, span is full");
 	numbers.push_back(nbr);
+}
+
+void	Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+	size_t range = std::distance(begin, end);
+	if (numbers.size() + range > size)
+		throw std::overflow_error("Error: cannot add more numbers, span is full");
+	numbers.insert(numbers.end(), begin, end);
 }
 
 int		Span::shortestSpan() const

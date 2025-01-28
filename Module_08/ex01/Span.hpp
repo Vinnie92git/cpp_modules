@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 20:01:29 by vini              #+#    #+#             */
-/*   Updated: 2025/01/27 21:45:12 by vini             ###   ########.fr       */
+/*   Updated: 2025/01/28 17:46:19 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ public:
 	~Span();
 
 	void	addNumber(int nbr);
+	void	addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 	int		shortestSpan() const;
 	int		longestSpan() const;
 
