@@ -6,23 +6,23 @@
 #    By: vini <vini@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/23 20:38:39 by vini              #+#    #+#              #
-#    Updated: 2025/01/29 19:48:24 by vini             ###   ########.fr        #
+#    Updated: 2025/01/29 22:44:32 by vini             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =
+NAME = btc
 LIB = ar rcs
 RM = rm -f
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 # DEBUG = -g3 -fsanitize=address
-SRC = main.cpp
+SRC = main.cpp BitcoinExchange.cpp
 
 OBJ_DIR = ./obj/
 OBJ_FILES = $(SRC:.cpp=.o)
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-HEADER =
+HEADER = BitcoinExchange.hpp
 
 # COLOURS
 DEF_COLOR = \033[0;39m
