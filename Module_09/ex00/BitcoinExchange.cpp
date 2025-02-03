@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 22:43:38 by vini              #+#    #+#             */
-/*   Updated: 2025/02/03 20:46:41 by vini             ###   ########.fr       */
+/*   Updated: 2025/02/03 20:48:49 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ double BitcoinExchange::closestRate(const std::string& date, const std::map<std:
 {
 	std::map<std::string, double>::const_iterator	it = database.lower_bound(date);
 
-	if (it == database.begin() && it->first != date) {
+	if (it == database.begin() && it->first != date)
+	{
 		std::cerr << "Error: No exchange rate available => " << date << std::endl;
 		return -1;
 	}
 
-	if (it == database.end() || it->first != date) {
+	if (it == database.end() || it->first != date)
 		--it;
-	}
 
 	return it->second;
 }
