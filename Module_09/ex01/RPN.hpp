@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/23 20:37:55 by vini              #+#    #+#             */
-/*   Updated: 2025/02/08 13:17:36 by vini             ###   ########.fr       */
+/*   Created: 2025/02/08 12:32:57 by vini              #+#    #+#             */
+/*   Updated: 2025/02/08 13:22:24 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iomanip>
-#include "RPN.hpp"
+#ifndef RPN_HPP
+#define RPN_HPP
 
-int	main(int argc, char** argv)
+#include <iomanip>
+#include <iostream>
+#include <cstdlib>
+#include <stack>
+
+class RPN
 {
-	if (argc != 2)
-	{
-		std::cout << "Error: invalid number of arguments" << std::endl;
-		return 1;
-	}
-	else
-	{
-		RPN	rpn;
-		rpn.calculate(argv[1]);
-	}
-	return 0;
-}
+public:
+	RPN();
+	RPN(const RPN& toCopy);
+	RPN& operator=(const RPN& toAssign);
+	~RPN();
+
+	void	calculate(const std::string& expression);
+	int		validNumber(const char& number);
+	int		validOperator(const char& token);
+
+private:
+	std::stack<char>	stack;
+};
+
+#endif
