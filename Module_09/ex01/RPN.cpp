@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 12:32:52 by vini              #+#    #+#             */
-/*   Updated: 2025/02/08 14:00:37 by vini             ###   ########.fr       */
+/*   Updated: 2025/02/08 16:01:11 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,35 +27,73 @@ RPN& RPN::operator=(const RPN& toAssign)
 
 RPN::~RPN() {}
 
-int		RPN::validNumber(const char& number)
+void	RPN::performOperation(std::stack<int>& rpnStack, const std::string& token)
 {
-	if (!std::isdigit(number))
-		return 0;
+	int	secondOperand = rpnStack.top();
+	rpnStack.pop();
+	int	firstOperand = rpnStack.top();
+	rpnStack.pop();
 
-	int	nb = std::atoi(&number);
-
-	if (nb < 0 || nb > 9)
-		return 0;
-	return 1;
-}
-
-int		RPN::validOperator(const char& token)
-{
-	if (token != '+' && token != '-' && token != '/' && token != '*' && token != ' ')
-		return 0;
-	return 1;
-}
-
-void	RPN::calculate(const std::string& expression)
-{
-	int	i = 0;
-
-	while (expression[i])
+	if (token == "+")
+		rpnStack.push(firstOperand + secondOperand);
+	else if (token == "-")
+		rpnStack.push(firstOperand - secondOperand);
+	else if (token == "/")
 	{
-		if (validOperator(expression[i]) || validNumber(expression[i]))
-				std::cout << expression[i] << std::endl;
+		if (secondOperand == 0)
+			return ;
+		rpnStack.push(firstOperand / secondOperand);
+	}
+	else if (token == "*")
+		rpnStack.push(firstOperand * secondOperand);
+}
+
+int		RPN::validNumber(const std::string& token)
+{
+	if (token < "0" || token > "9")
+		return 0;
+	return 1;
+}
+
+int		RPN::validOperator(const std::string& token)
+{
+	if (token != "+" && token != "-" && token != "/" && token != "*")
+		return 0;
+	return 1;
+}
+
+int	RPN::calculate(const std::string& expression)
+{
+	std::istringstream	expressionStream(expression);
+	std::string			token;
+
+	while (expressionStream >> token)
+	{
+		if (validNumber(token))
+			rpnStack.push(std::atoi(token.c_str()));
+		else if (validOperator(token))
+		{
+			if (rpnStack.size() < 2)
+			{
+				std::cerr << "Error" << std::endl;
+				return 1;
+			}
+			performOperation(rpnStack, token);
+		}
 		else
-			std::cout << "Error: invalid token" << std::endl;
-		i++;
+		{
+			std::cerr << "Error" << std::endl;
+			return 1;
+		}
+	}
+	if (rpnStack.size() == 1)
+	{
+		std::cout << rpnStack.top() << std::endl;
+		return 0;
+	}
+	else
+	{
+		std::cerr << "Error" << std::endl;
+		return 1;
 	}
 }

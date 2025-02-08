@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 12:32:57 by vini              #+#    #+#             */
-/*   Updated: 2025/02/08 13:22:24 by vini             ###   ########.fr       */
+/*   Updated: 2025/02/08 15:59:31 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <stack>
+#include <sstream>
 
 class RPN
 {
@@ -26,12 +27,13 @@ public:
 	RPN& operator=(const RPN& toAssign);
 	~RPN();
 
-	void	calculate(const std::string& expression);
-	int		validNumber(const char& number);
-	int		validOperator(const char& token);
+	void	performOperation(std::stack<int>& rpnStack, const std::string& token);
+	int		validNumber(const std::string& token);
+	int		validOperator(const std::string& token);
+	int		calculate(const std::string& expression);
 
 private:
-	std::stack<char>	stack;
+	std::stack<int>	rpnStack;
 };
 
 #endif
