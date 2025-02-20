@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 20:37:55 by vini              #+#    #+#             */
-/*   Updated: 2025/02/13 21:59:24 by vini             ###   ########.fr       */
+/*   Updated: 2025/02/20 14:04:56 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(int argc, char** argv)
 			sequence.push_back(nb);
 		}
 		PmergeMe	sorter(sequence);
+		sorter.sort();
 	}
 
 	return 0;

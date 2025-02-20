@@ -6,7 +6,7 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 17:59:34 by vini              #+#    #+#             */
-/*   Updated: 2025/02/13 22:09:23 by vini             ###   ########.fr       */
+/*   Updated: 2025/02/20 14:36:26 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 #include <iomanip>
 #include <vector>
 #include <deque>
+#include <algorithm>
+#include <ctime>
+#include <cstdlib>
 
 class PmergeMe
 {
@@ -26,12 +29,12 @@ public:
 	PmergeMe& operator=(const PmergeMe& toAssign);
 	~PmergeMe();
 
+	void	mergeInsert(std::vector<int>& unsortedVector);
+	void	sort();
+
 private:
 	std::vector<int>	mainVector;
-	std::deque<int>		mainDeque;
-
-	void	mergeInsert(std::vector<int> unsortedVector);
-	void	sort();
+	// std::deque<int>		mainDeque;
 };
 
 #endif
