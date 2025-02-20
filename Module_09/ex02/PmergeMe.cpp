@@ -6,13 +6,13 @@
 /*   By: vini <vini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 17:59:37 by vini              #+#    #+#             */
-/*   Updated: 2025/02/20 14:46:35 by vini             ###   ########.fr       */
+/*   Updated: 2025/02/20 15:15:01 by vini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-PmergeMe::PmergeMe(std::vector<int> input) : mainVector(input.begin(), input.end()) {}
+PmergeMe::PmergeMe(std::vector<int> input) : mainVector(input.begin(), input.end()), mainDeque(input.begin(), input.end()) {}
 
 PmergeMe::PmergeMe(const PmergeMe& toCopy)
 {
@@ -30,7 +30,8 @@ PmergeMe::~PmergeMe()
 	
 }
 
-void	PmergeMe::mergeInsert(std::vector<int>& container)
+template <typename T>
+void	PmergeMe::mergeInsert(T& container)
 {
 	if (container.size() < 2)
 		return ;
@@ -88,12 +89,17 @@ void	PmergeMe::sort()
 	clock_t	start = clock();
 	mergeInsert(mainVector);
 	clock_t	end = clock();
-	double	vec_time = double (end - start) / CLOCKS_PER_SEC;
+	double	vec_time = double (end - start) / CLOCKS_PER_SEC * 1000;
+
+	start = clock();
+	mergeInsert(mainDeque);
+	end = clock();
+	double	deq_time = double (end - start) / CLOCKS_PER_SEC * 1000;
 
 	std::cout << "\nSorted sequence: ";
 	for (size_t i = 0; i < mainVector.size(); ++i)
 		std::cout << mainVector[i] << " ";
 
 	std::cout << "\nTime to sort the sequence using an std::vector: " << vec_time << " seconds" << std::endl;
-	// std::cout << "\nTime to sort the sequence using an std::deque: " << deq_time << " seconds" << std::endl;
+	std::cout << "Time to sort the sequence using an std::deque: " << deq_time << " seconds" << std::endl;
 }
